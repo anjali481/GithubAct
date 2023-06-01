@@ -24,6 +24,9 @@ jobs:
       - name: Build and test
         run: |
           npm ci
+          else
+          npm i
+          fi
           npm run build
           npm test
 
