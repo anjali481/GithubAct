@@ -32,11 +32,13 @@ jobs:
         run: docker build -t anjali4811/react-pages .
 
     
-      - name: Push Docker image to Docker Hub
+      - name: Login in  Docker Hub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.MY_DOCKER_LOGIN_USERNAME }}
           password: ${{ secrets.MY_DOCKER_LOGIN_PASSWORDS }}
-
-      - run: docker push anjali4811/react-pages
+     
+      - name: Push to Docker Hub
+        run: docker push anjali4811/react-pages
+     
 
