@@ -31,8 +31,7 @@ jobs:
       - name: Build Docker image
         run: docker build -t your_docker-image-name .
 
-      - name: Tag Docker image
-        run: docker tag your-docker-image-name your-docker-image-name:latest
+    
 
       - name: Push Docker image to Docker Hub
         uses: docker/login-action@v1
