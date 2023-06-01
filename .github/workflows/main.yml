@@ -23,10 +23,8 @@ jobs:
 
       - name: Build and test
         run: |
+          npm install
           npm ci
-          else
-          npm i
-          fi
           npm run build
           npm test
 
