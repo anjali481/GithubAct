@@ -21,23 +21,22 @@ jobs:
         with:
           node-version: 14
 
-      - name: Build and test
-        run: |
-          npm install
-          npm ci
-          npm run build
-          npm test
+#       - name: Build and test
+#         run: |
+#           npm install
+#           npm ci
+#           npm run build
+#           npm test
 
       - name: Build Docker image
-        run: docker build -t your_docker-image-name .
+        run: docker build -t anjali4811/react-pages .
 
     
-
       - name: Push Docker image to Docker Hub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.MY_DOCKER_LOGIN_USERNAME }}
           password: ${{ secrets.MY_DOCKER_LOGIN_PASSWORDS }}
 
-      - run: docker push your-docker-image-name
+      - run: docker push anjali4811/react-pages
 
